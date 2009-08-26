@@ -1,0 +1,12 @@
+# use /bin/sh to run commands, overriding the default set by cron
+SHELL=/bin/sh
+# mail any output to `paul', no matter whose crontab this is
+MAILTO=bnode
+# FIELDS
+# minute        0-59
+# hour          0-23
+# day of month  1-31
+# month         1-12 (or names, see below)
+# day of week
+* * * * *       $HOME/bin/backup_image.sh >> $HOME/tmp/out 2>&1
+
